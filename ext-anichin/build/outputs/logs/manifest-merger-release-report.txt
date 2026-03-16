@@ -1,0 +1,43 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-18:12
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-18:12
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-18:12
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-18:12
+	package
+		INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:7:5-17:19
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:7:5-17:19
+	android:extractNativeLibs
+		INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
+	android:supportsRtl
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:8:9-35
+meta-data#azhua.extension.class
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:13:9-15:67
+	android:value
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:15:13-64
+	android:name
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:14:13-49
+uses-sdk
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml

@@ -1,0 +1,212 @@
+# The proguard configuration file for the following section is /home/user/myapp/AzHua/ext-anichin/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.5.0
+# This is a configuration file for ProGuard.
+# http://proguard.sourceforge.net/index.html#manual/usage.html
+#
+# Starting with version 2.2 of the Android plugin for Gradle, this file is distributed together with
+# the plugin and unpacked at build-time. The files in $ANDROID_HOME are no longer maintained and
+# will be ignored by new version of the Android plugin for Gradle.
+
+# Optimizations: If you don't want to optimize, use the proguard-android.txt configuration file
+# instead of this one, which turns off the optimization flags.
+-allowaccessmodification
+
+# Preserve some attributes that may be required for reflection.
+-keepattributes AnnotationDefault,
+                EnclosingMethod,
+                InnerClasses,
+                RuntimeVisibleAnnotations,
+                RuntimeVisibleParameterAnnotations,
+                RuntimeVisibleTypeAnnotations,
+                Signature
+
+-keep public class com.google.vending.licensing.ILicensingService
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class com.google.android.vending.licensing.ILicensingService
+-dontnote com.android.vending.licensing.ILicensingService
+-dontnote com.google.vending.licensing.ILicensingService
+-dontnote com.google.android.vending.licensing.ILicensingService
+
+# For native methods, see https://www.guardsquare.com/manual/configuration/examples#native
+-keepclasseswithmembernames,includedescriptorclasses class * {
+    native <methods>;
+}
+
+# Keep setters in Views so that animations can still work.
+-keepclassmembers public class * extends android.view.View {
+    void set*(***);
+    *** get*();
+}
+
+# We want to keep methods in Activity that could be used in the XML attribute onClick.
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+
+# For enumeration classes, see https://www.guardsquare.com/manual/configuration/examples#enumerations
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+# Preserve annotated Javascript interface methods.
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+# The support libraries contains references to newer platform versions.
+# Don't warn about those in case this app is linking against an older
+# platform version. We know about them, and they are safe.
+-dontnote android.support.**
+-dontnote androidx.**
+-dontwarn android.support.**
+-dontwarn androidx.**
+
+# Understand the @Keep support annotation.
+-keep class android.support.annotation.Keep
+
+-keep @android.support.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <init>(...);
+}
+
+# These classes are duplicated between android.jar and org.apache.http.legacy.jar.
+-dontnote org.apache.http.**
+-dontnote android.net.http.**
+
+# These classes are duplicated between android.jar and core-lambda-stubs.jar.
+-dontnote java.lang.invoke.**
+
+# End of content from /home/user/myapp/AzHua/ext-anichin/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.5.0
+# The proguard configuration file for the following section is /home/user/myapp/AzHua/ext-anichin/proguard-rules.pro
+# 🛡️ MANTRA PELINDUNG EKSTENSI ANICHIN
+# ====================================
+# File ini melindungi class ekstensi agar tetap bisa di-load oleh Core App
+# meskipun di-obfuscate.
+
+# --- 1. LINDUNGI CLASS UTAMA EKSTENSI ---
+# AnichinSource harus tetap bernama AnichinSource agar bisa di-load via reflection
+-keep class com.azhua.ext.anichin.AnichinSource { *; }
+-keepclassmembers class com.azhua.ext.anichin.AnichinSource { *; }
+
+# --- 2. LINDUNGI PARSER & NETWORK ---
+-keep class com.azhua.ext.anichin.parser.** { *; }
+-keep class com.azhua.ext.anichin.network.** { *; }
+
+# --- 3. LINDUNGI KONTRAK (WAJIB!) ---
+# compileOnly berarti Core App punya, tapi tetap perlu keep nama interface
+-keep interface com.azhua.core.contracts.Source { *; }
+-keep interface com.azhua.core.contracts.SourceFactory { *; }
+
+# --- 4. LINDUNGI MODEL ---
+-keep class com.azhua.core.contracts.models.** { *; }
+
+# --- 5. LINDUNGI JSOUP ---
+-keep class org.jsoup.** { *; }
+-keepclassmembers class org.jsoup.** { *; }
+
+# --- 6. LINDUNGI OKHTTP ---
+-keep class okhttp3.** { *; }
+-keep class okio.** { *; }
+
+# --- 7. LINDUNGI KOTLIN ---
+-keep class kotlin.** { *; }
+-keepclassmembers class kotlin.** { *; }
+
+# --- 8. KEEP META-DATA ---
+-keepattributes *Annotation*
+
+# --- 9. SUPPRESS MISSING CLASS WARNINGS ---
+-dontwarn org.jspecify.annotations.NullMarked
+-keepattributes Signature
+
+# End of content from /home/user/myapp/AzHua/ext-anichin/proguard-rules.pro
+# The proguard configuration file for the following section is /home/user/.gradle/caches/transforms-4/d70b5e9e459b4d3df9935e90ab1debee/transformed/rules/lib/META-INF/com.android.tools/r8-from-1.6.0/coroutines.pro
+# Allow R8 to optimize away the FastServiceLoader.
+# Together with ServiceLoader optimization in R8
+# this results in direct instantiation when loading Dispatchers.Main
+-assumenosideeffects class kotlinx.coroutines.internal.MainDispatcherLoader {
+    boolean FAST_SERVICE_LOADER_ENABLED return false;
+}
+
+-assumenosideeffects class kotlinx.coroutines.internal.FastServiceLoaderKt {
+    boolean ANDROID_DETECTED return true;
+}
+
+# Disable support for "Missing Main Dispatcher", since we always have Android main dispatcher
+-assumenosideeffects class kotlinx.coroutines.internal.MainDispatchersKt {
+    boolean SUPPORT_MISSING return false;
+}
+
+# Statically turn off all debugging facilities and assertions
+-assumenosideeffects class kotlinx.coroutines.DebugKt {
+    boolean getASSERTIONS_ENABLED() return false;
+    boolean getDEBUG() return false;
+    boolean getRECOVER_STACK_TRACES() return false;
+}
+
+# End of content from /home/user/.gradle/caches/transforms-4/d70b5e9e459b4d3df9935e90ab1debee/transformed/rules/lib/META-INF/com.android.tools/r8-from-1.6.0/coroutines.pro
+# The proguard configuration file for the following section is /home/user/.gradle/caches/transforms-4/87d083b0969d68acb0be72a91b7c33c5/transformed/rules/lib/META-INF/com.android.tools/r8/coroutines.pro
+# When editing this file, update the following files as well:
+# - META-INF/proguard/coroutines.pro
+# - META-INF/com.android.tools/proguard/coroutines.pro
+
+# Most of volatile fields are updated with AFU and should not be mangled
+-keepclassmembers class kotlinx.coroutines.** {
+    volatile <fields>;
+}
+
+# Same story for the standard library's SafeContinuation that also uses AtomicReferenceFieldUpdater
+-keepclassmembers class kotlin.coroutines.SafeContinuation {
+    volatile <fields>;
+}
+
+# These classes are only required by kotlinx.coroutines.debug.AgentPremain, which is only loaded when
+# kotlinx-coroutines-core is used as a Java agent, so these are not needed in contexts where ProGuard is used.
+-dontwarn java.lang.instrument.ClassFileTransformer
+-dontwarn sun.misc.SignalHandler
+-dontwarn java.lang.instrument.Instrumentation
+-dontwarn sun.misc.Signal
+
+# Only used in `kotlinx.coroutines.internal.ExceptionsConstructor`.
+# The case when it is not available is hidden in a `try`-`catch`, as well as a check for Android.
+-dontwarn java.lang.ClassValue
+
+# An annotation used for build tooling, won't be directly accessed.
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+# End of content from /home/user/.gradle/caches/transforms-4/87d083b0969d68acb0be72a91b7c33c5/transformed/rules/lib/META-INF/com.android.tools/r8/coroutines.pro
+# The proguard configuration file for the following section is /home/user/.gradle/caches/transforms-4/6828a9f7d210f28d4843e59917c151da/transformed/rules/lib/META-INF/proguard/okhttp3.pro
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt and other security providers are available.
+-dontwarn okhttp3.internal.platform.**
+-dontwarn org.conscrypt.**
+-dontwarn org.bouncycastle.**
+-dontwarn org.openjsse.**
+
+# End of content from /home/user/.gradle/caches/transforms-4/6828a9f7d210f28d4843e59917c151da/transformed/rules/lib/META-INF/proguard/okhttp3.pro
+# The proguard configuration file for the following section is /home/user/myapp/AzHua/ext-anichin/build/intermediates/aapt_proguard_file/release/processReleaseResources/aapt_rules.txt
+
+# End of content from /home/user/myapp/AzHua/ext-anichin/build/intermediates/aapt_proguard_file/release/processReleaseResources/aapt_rules.txt
+# The proguard configuration file for the following section is <unknown>
+
+# End of content from <unknown>

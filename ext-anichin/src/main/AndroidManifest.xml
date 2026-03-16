@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Izin internet murni untuk scraping -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:label="AzHua Ext: Anichin"
+        android:supportsRtl="true">
+        
+        <!-- SEGEL PENGENAL: Nama kelas utama ekstensi ini -->
+        <meta-data
+            android:name="azhua.extension.class"
+            android:value="com.azhua.ext.anichin.AnichinSource" />
+            
+    </application>
+</manifest>

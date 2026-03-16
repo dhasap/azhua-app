@@ -1,0 +1,8 @@
+com.azhua.ext.anichin.ext-anichin-pngs-0 /home/user/myapp/AzHua/ext-anichin/build/generated/res/pngs/release
+com.azhua.ext.anichin.ext-anichin-resValues-1 /home/user/myapp/AzHua/ext-anichin/build/generated/res/resValues/release
+com.azhua.ext.anichin.ext-anichin-packageReleaseResources-2 /home/user/myapp/AzHua/ext-anichin/build/intermediates/incremental/release/packageReleaseResources/merged.dir
+com.azhua.ext.anichin.ext-anichin-packageReleaseResources-3 /home/user/myapp/AzHua/ext-anichin/build/intermediates/incremental/release/packageReleaseResources/stripped.dir
+com.azhua.ext.anichin.ext-anichin-merged-not-compiled-resources-4 /home/user/myapp/AzHua/ext-anichin/build/intermediates/merged-not-compiled-resources/release
+com.azhua.ext.anichin.ext-anichin-release-5 /home/user/myapp/AzHua/ext-anichin/build/intermediates/merged_res/release/mergeReleaseResources
+com.azhua.ext.anichin.ext-anichin-main-6 /home/user/myapp/AzHua/ext-anichin/src/main/res
+com.azhua.ext.anichin.ext-anichin-release-7 /home/user/myapp/AzHua/ext-anichin/src/release/res

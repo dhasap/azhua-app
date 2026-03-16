@@ -1,0 +1,7 @@
+
+
+The root reachable resources are:
+
+Unused resources are: 
+
+Resource shrinking did not work (grew from 884 to 924); using original instead

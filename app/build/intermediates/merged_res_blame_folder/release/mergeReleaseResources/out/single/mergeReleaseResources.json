@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.azhua.app-release-57:/xml_provider_paths.xml.flat",
+        "source": "com.azhua.app-main-58:/xml/provider_paths.xml"
+    }
+]
