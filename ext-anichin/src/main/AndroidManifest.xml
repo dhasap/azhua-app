@@ -13,6 +13,15 @@
         <meta-data
             android:name="azhua.extension.class"
             android:value="com.azhua.ext.anichin.AnichinSource" />
+        
+        <!-- 📡 PEMANCAR SINYAL: Marker activity agar Core App bisa mendeteksi ekstensi -->
+        <activity
+            android:name=".ExtensionMarkerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="azhua.intent.action.EXTENSION" />
+            </intent-filter>
+        </activity>
             
     </application>
 </manifest>

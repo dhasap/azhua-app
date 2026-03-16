@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.azhua.ext.anichin"
-4    android:versionCode="2"
-5    android:versionName="2.0.0" >
+4    android:versionCode="4"
+5    android:versionName="2.0.2" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="26"
@@ -14,7 +14,7 @@
 12-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:5:22-64
 13
 14    <application
-14-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:7:5-17:19
+14-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:7:5-26:19
 15        android:allowBackup="true"
 15-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:8:9-35
 16        android:extractNativeLibs="false"
@@ -30,6 +30,21 @@
 22-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:14:13-49
 23            android:value="com.azhua.ext.anichin.AnichinSource" />
 23-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:15:13-64
-24    </application>
-25
-26</manifest>
+24
+25        <!-- 📡 PEMANCAR SINYAL: Marker activity agar Core App bisa mendeteksi ekstensi -->
+26        <activity
+26-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:18:9-24:20
+27            android:name="com.azhua.ext.anichin.ExtensionMarkerActivity"
+27-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:19:13-52
+28            android:exported="true" >
+28-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:20:13-36
+29            <intent-filter>
+29-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:21:13-23:29
+30                <action android:name="azhua.intent.action.EXTENSION" />
+30-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:22:17-72
+30-->/home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:22:25-69
+31            </intent-filter>
+32        </activity>
+33    </application>
+34
+35</manifest>

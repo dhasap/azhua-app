@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:27:9-35:20
+INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:34:9-42:20
 	android:grantUriPermissions
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:31:13-47
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:38:13-47
 	android:authorities
 		INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:29:13-60
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:36:13-60
 	android:exported
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:30:13-37
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:28:13-62
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:35:13-62
 manifest
-ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:2:1-38:12
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:2:1-45:12
 MERGED from [androidx.media3:media3-ui:1.3.0] /home/user/.gradle/caches/transforms-4/57bfc644bf20ba2d853d4def8732b43f/transformed/media3-ui-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media3:media3-extractor:1.3.0] /home/user/.gradle/caches/transforms-4/2aaf0104e2d654d8e2bec2bd705e97bd/transformed/media3-extractor-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media3:media3-container:1.3.0] /home/user/.gradle/caches/transforms-4/80f32ee2b877e827a226c764273ce4a4/transformed/media3-container-1.3.0/AndroidManifest.xml:17:1-22:12
@@ -112,9 +112,17 @@ uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
 ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:9:5-83
 	android:name
 		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:9:22-80
+queries
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:12:5-16:15
+intent#action:name:azhua.intent.action.EXTENSION
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:13:9-15:18
+action#azhua.intent.action.EXTENSION
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:14:13-68
+	android:name
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:14:21-65
 application
-ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:11:5-37:19
-INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:11:5-37:19
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:18:5-44:19
+INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:18:5-44:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/user/.gradle/caches/transforms-4/bab3f30e2b1fb5f1597ff69e1e834e1e/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /home/user/.gradle/caches/transforms-4/bab3f30e2b1fb5f1597ff69e1e834e1e/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/user/.gradle/caches/transforms-4/f5082c3ad25b3de50f7c6fdd0cdcc9fd/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:23:5-33:19
@@ -134,37 +142,37 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/user/.gradle/caches/t
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] /home/user/.gradle/caches/transforms-4/52293c176151fd3c3646a017ea89d0f9/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:22:9-35
 	android:label
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:13:9-41
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:20:9-41
 	android:allowBackup
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:14:9-43
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:21:9-43
 activity#com.azhua.app.MainActivity
-ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:16:9-24:20
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:23:9-31:20
 	android:exported
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:18:13-36
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:25:13-36
 	android:theme
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:19:13-47
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:26:13-47
 	android:name
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:17:13-41
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:24:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:20:13-23:29
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:27:13-30:29
 action#android.intent.action.MAIN
-ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:21:17-69
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:21:25-66
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:29:27-74
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:32:13-34:58
+ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:39:13-41:58
 	android:resource
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:34:17-55
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:41:17-55
 	android:name
-		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:33:17-67
+		ADDED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml:40:17-67
 uses-sdk
 INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/user/myapp/AzHua/app/src/main/AndroidManifest.xml

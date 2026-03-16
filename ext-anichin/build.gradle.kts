@@ -21,19 +21,17 @@ android {
         applicationId = "com.azhua.ext.anichin"
         minSdk = 26
         targetSdk = 34
-        versionCode = 2
-        versionName = "2.0.0"
+        // 🔥 SAMAKAN DENGAN INDEX.JSON - Hindari loop minta update!
+        versionCode = 4
+        versionName = "2.0.2"
     }
 
     buildTypes {
         release {
-            // 🛡️ AKTIFKAN OBFUSCATION UNTUK EKSTENSI JUGA
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            // 🛡️ NONAKTIFKAN PROGUARD untuk Ekstensi - Hindari ClassNotFound saat scraping
+            // Ukuran ekstensi kecil (1MB), tidak perlu minify. Yang penting scraping berfungsi!
+            isMinifyEnabled = false
+            isShrinkResources = false
             // 🔐 Terapkan Segel Jiwa untuk signing
             signingConfig = signingConfigs.getByName("release")
         }

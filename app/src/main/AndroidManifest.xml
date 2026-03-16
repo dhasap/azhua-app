@@ -8,6 +8,13 @@
     <!-- Izin untuk menginstal APK Ekstensi (Wajib untuk API 26+) -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     
+    <!-- 🔓 TEMBUS PACKAGE VISIBILITY - Agar bisa melihat Ekstensi terinstal (Android 11+) -->
+    <queries>
+        <intent>
+            <action android:name="azhua.intent.action.EXTENSION" />
+        </intent>
+    </queries>
+    
     <application
         android:allowBackup="true"
         android:label="@string/app_name"

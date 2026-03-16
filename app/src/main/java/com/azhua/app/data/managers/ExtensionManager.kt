@@ -77,29 +77,70 @@ class ExtensionManager(private val context: Context) {
 
     /**
      * Mengunduh APK Ekstensi menggunakan DownloadManager bawaan Android
+     * dengan Jurus Ranah Pribadi (ExternalFilesDir) untuk menghindari Force Close Android 11+
      * 
      * @param extension ExtensionItem yang akan diunduh
      * @return ID download untuk tracking
      */
     fun downloadExtensionApk(extension: ExtensionItem): Long {
-        val fileName = "${extension.pkg}_${extension.versionName}.apk"
-        val subPath = "AzHua/Extensions/$fileName"
+        val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+        
+        // Nama file yang bersih
+        val fileName = "${extension.name}_${extension.versionName}.apk"
         
         val request = DownloadManager.Request(Uri.parse(extension.apkUrl))
-            .setTitle("Mengunduh: ${extension.name}")
-            .setDescription("Ekstensi AzHua v${extension.versionName}")
-            .setNotificationVisibility(
-                DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED
-            )
-            .setDestinationInExternalPublicDir(
-                Environment.DIRECTORY_DOWNLOADS,
-                subPath
-            )
-            .setAllowedOverMetered(true)
-            .setAllowedOverRoaming(true)
+            .setTitle("Mengunduh Ekstensi: ${extension.name}")
+            .setDescription("Menyiapkan artefak untuk instalasi...")
+            .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+            // 🔥 JURUS RAHASIA: Simpan di Ranah Pribadi agar Android 11+ tidak Force Close!
+            .setDestinationInExternalFilesDir(context, Environment.DIRECTORY_DOWNLOADS, fileName)
 
-        val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-        return downloadManager.enqueue(request)
+        val downloadId = downloadManager.enqueue(request)
+
+        val onDownloadComplete = object : BroadcastReceiver() {
+            override fun onReceive(ctxt: Context, intent: Intent) {
+                val id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+                if (downloadId == id) {
+                    try {
+                        // 1. Ambil file dari Ranah Pribadi
+                        val apkFile = File(ctxt.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName)
+                        
+                        if (apkFile.exists()) {
+                            // 2. Gunakan FileProvider (Mantra dari Fase 2) agar disetujui oleh sistem!
+                            val apkUri = FileProvider.getUriForFile(
+                                ctxt,
+                                "${ctxt.packageName}.provider",
+                                apkFile
+                            )
+                            
+                            // 3. Panggil Pop-up Instalasi!
+                            val installIntent = Intent(Intent.ACTION_VIEW).apply {
+                                setDataAndType(apkUri, "application/vnd.android.package-archive")
+                                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            }
+                            ctxt.startActivity(installIntent)
+                        }
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    } finally {
+                        // 4. Cabut mata-mata agar tidak terjadi kebocoran Qi (Memory Leak)
+                        ctxt.unregisterReceiver(this)
+                    }
+                }
+            }
+        }
+
+        // Daftarkan BroadcastReceiver menggunakan ApplicationContext agar stabil
+        val appContext = context.applicationContext
+        val filter = IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE)
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            appContext.registerReceiver(onDownloadComplete, filter, Context.RECEIVER_EXPORTED)
+        } else {
+            appContext.registerReceiver(onDownloadComplete, filter)
+        }
+        
+        return downloadId
     }
 
     /**

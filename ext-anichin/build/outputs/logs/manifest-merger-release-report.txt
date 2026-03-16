@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-18:12
-INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-18:12
-INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-18:12
-INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-18:12
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:2:1-27:12
 	package
 		INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
 	android:versionName
@@ -17,8 +17,8 @@ ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:5:5-6
 	android:name
 		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:7:5-17:19
-INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:7:5-17:19
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:7:5-26:19
+INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:7:5-26:19
 	android:extractNativeLibs
 		INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
 	android:supportsRtl
@@ -33,6 +33,18 @@ ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:13:9-
 		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:15:13-64
 	android:name
 		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:14:13-49
+activity#com.azhua.ext.anichin.ExtensionMarkerActivity
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:18:9-24:20
+	android:exported
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:20:13-36
+	android:name
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:19:13-52
+intent-filter#action:name:azhua.intent.action.EXTENSION
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:21:13-23:29
+action#azhua.intent.action.EXTENSION
+ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:22:17-72
+	android:name
+		ADDED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml:22:25-69
 uses-sdk
 INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/user/myapp/AzHua/ext-anichin/src/main/AndroidManifest.xml
