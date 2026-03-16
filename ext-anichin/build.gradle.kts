@@ -7,6 +7,16 @@ android {
     namespace = "com.azhua.ext.anichin"
     compileSdk = 34
 
+    // 🔐 SEGEL JIWA - Signing Config untuk Extension
+    signingConfigs {
+        create("release") {
+            storeFile = file("../keystore/azhua_keystore.jks")
+            storePassword = "azhua2026"
+            keyAlias = "azhua_key"
+            keyPassword = "azhua2026"
+        }
+    }
+
     defaultConfig {
         applicationId = "com.azhua.ext.anichin"
         minSdk = 26
@@ -24,6 +34,16 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // 🔐 Terapkan Segel Jiwa untuk signing
+            signingConfig = signingConfigs.getByName("release")
+        }
+    }
+    
+    // 🔐 AKTIFKAN V1 SIGNING (JAR SIGNING) - Penting untuk kompatibilitas
+    signingConfigs {
+        getByName("release") {
+            enableV1Signing = true
+            enableV2Signing = true
         }
     }
     

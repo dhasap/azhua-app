@@ -1,4 +1,4 @@
-#Mon Mar 16 16:40:02 UTC 2026
+#Mon Mar 16 17:29:00 UTC 2026
 base.0=/home/user/myapp/AzHua/ext-anichin/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
